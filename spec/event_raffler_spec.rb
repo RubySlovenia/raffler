@@ -18,17 +18,20 @@ describe EventRaffler do
     end
   end
 
-  it 'raffles and removes n random attending members of an event' do
+  it 'raffles n random attending members' do
     VCR.use_cassette('event-169771922') do
-      first = er.raffle(2)
-      first.must_be_instance_of Array
-      first.count.must_equal 2
+      er.raffle(2).must_be_instance_of Array
+      er.raffle(2).count.must_equal 2
+    end
+  end
 
-      second = er.raffle(14, first)
-      second.count.must_equal 14
+  it 'raffles n random attending members without particular members' do
+    VCR.use_cassette('event-169771922') do
+      first = er.raffle(16)
+      first.count.must_equal 16
 
-      third = er.raffle(1, first + second)
-      third.count.must_equal 0
+      second = er.raffle(1, first)
+      second.count.must_equal 0
     end
   end
 end
