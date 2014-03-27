@@ -36,4 +36,9 @@ class Application < Sinatra::Base
     require 'group'
     json Group.new(params[:name]).events
   end
+
+  get '/event/:id' do
+    require 'event_raffler'
+    haml :event, locals: { event: EventRaffler.new(params[:id]) }
+  end
 end

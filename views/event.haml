@@ -1,0 +1,6 @@
+%ul.list-group
+  - event.rsvps.each do |member|
+    %li.list-group-item{class: ('list-group-item-danger' if member['response'] == 'no')}
+      %span.badge= member['response']
+      %input{type: 'checkbox', value: member['member']['member_id'], checked: ('checked' if member['response'] == 'yes') }
+      = member['member']['name']
