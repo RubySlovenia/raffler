@@ -1,7 +1,7 @@
 require 'ruby_meetup'
 require 'json'
 
-class Raffle
+class Raffler
   attr_reader :meetup
 
   def initialize
@@ -16,5 +16,9 @@ class Raffle
 
   def attending(event_id)
     rsvps(event_id).reject{ |r| r['response'] != 'yes'  }
+  end
+
+  def raffle(event_id, n)
+    attending(event_id).sample(n)
   end
 end
