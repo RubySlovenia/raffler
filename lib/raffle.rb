@@ -1,4 +1,5 @@
 require 'ruby_meetup'
+require 'json'
 
 class Raffle
   attr_reader :meetup
@@ -6,5 +7,10 @@ class Raffle
   def initialize
     RubyMeetup::ApiKeyClient.key = ENV['MEETUP_API_KEY']
     @meetup = RubyMeetup::ApiKeyClient.new
+  end
+
+  def rsvps(event_id)
+    rsvps = JSON.parse(@meetup.get_path('/2/rsvps', { event_id: event_id }))
+    rsvps['results']
   end
 end
