@@ -4,6 +4,7 @@ ruby '2.1.1'
 
 gem 'rake'
 gem 'sinatra'
+gem 'sinatra-contrib'
 gem 'dotenv'
 gem 'ruby_meetup2'
 

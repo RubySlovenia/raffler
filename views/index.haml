@@ -1,0 +1,16 @@
+.panel.panel-info
+  .panel-heading
+    %h3.panel-title meetup.com group
+  .panel-body
+    %form.form-horizontal
+      .form-group
+        %label.col-sm-2.control-label{for: "group-name"} Group URL Name or ID
+        .col-sm-8
+          %input#group-name.form-control{placeholder: "Group URL Name or ID"}
+        .col-sm-2
+          .form-group
+            %button#show-events.btn.btn-primary{type: "submit"} Show events
+    %ul#events.list-group
+      %li.list-group-item
+        %span.badge 14
+        Cras justo odio
