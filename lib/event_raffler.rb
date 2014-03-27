@@ -16,12 +16,15 @@ class EventRaffler
   end
 
   def raffle(n, reject = [])
-    pot = attending.reject{ |m| reject.include? m }
-    pot.sample(n)
+    pot(reject).sample(n)
   end
 
   private
   def get_rsvps_json
     JSON.parse(@client.get_path('/2/rsvps', { event_id: @event_id }))
+  end
+
+  def pot(reject)
+    attending.reject{ |m| reject.include? m['member']['member_id'] }
   end
 end

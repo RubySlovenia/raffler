@@ -27,11 +27,9 @@ describe EventRaffler do
 
   it 'raffles n random attending members without particular members' do
     VCR.use_cassette('event-169771922') do
-      first = er.raffle(16)
-      first.count.must_equal 16
-
-      second = er.raffle(1, first)
-      second.count.must_equal 0
+      reject = [14137286, 6241033, 3436854, 127066762, 6250861, 35761952]
+      second = er.raffle(16, reject)
+      second.count.must_equal 10
     end
   end
 end
