@@ -14,14 +14,14 @@ class Application < Sinatra::Base
     use BetterErrors::Middleware
     BetterErrors.application_root = __dir__
     BetterErrors.use_pry!
+
+    require 'dotenv'
+    Dotenv.load
   end
 
   configure :production do
     require 'newrelic_rpm'
   end
-
-  require 'dotenv'
-  Dotenv.load
 
   require 'ruby_meetup'
   RubyMeetup::ApiKeyClient.key = ENV['MEETUP_API_KEY']

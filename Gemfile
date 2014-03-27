@@ -5,7 +5,6 @@ ruby '2.1.1'
 gem 'rake'
 gem 'sinatra'
 gem 'sinatra-contrib'
-gem 'dotenv'
 gem 'ruby_meetup2'
 
 gem 'haml'
@@ -13,6 +12,7 @@ gem 'unicorn'
 gem 'newrelic_rpm'
 
 group :test, :development do
+  gem 'dotenv'
   gem 'pry'
   gem 'better_errors'
   gem 'binding_of_caller'
