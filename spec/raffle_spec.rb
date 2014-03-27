@@ -11,4 +11,9 @@ describe Raffle do
     r.rsvps(169771922).must_be_instance_of Array
     r.rsvps(169771922).count.must_equal 17
   end
+
+  it 'lists attending members of an event' do
+    r.attending(169771922).must_be_instance_of Array
+    r.attending(169771922).count.must_equal 16
+  end
 end

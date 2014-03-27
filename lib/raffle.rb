@@ -13,4 +13,8 @@ class Raffle
     rsvps = JSON.parse(@meetup.get_path('/2/rsvps', { event_id: event_id }))
     rsvps['results']
   end
+
+  def attending(event_id)
+    rsvps(event_id).reject{ |r| r['response'] != 'yes'  }
+  end
 end
