@@ -27,18 +27,22 @@ class Application < Sinatra::Base
   RubyMeetup::ApiKeyClient.key = ENV['MEETUP_API_KEY']
 
   require 'haml'
+  require 'group'
+  require 'event_raffler'
 
   get '/' do
     haml :index
   end
 
   post '/events' do
-    require 'group'
     json Group.new(params[:name]).events
   end
 
   get '/event/:id' do
-    require 'event_raffler'
     haml :event, locals: { event: EventRaffler.new(params[:id]) }
+  end
+
+  post '/raffle' do
+    json EventRaffler.new(params[:event]).raffle(params[:number], params[:reject])
   end
 end

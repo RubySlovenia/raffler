@@ -1,6 +1,22 @@
-%ul.list-group
-  - event.rsvps.each do |member|
-    %li.list-group-item{class: ('list-group-item-danger' if member['response'] == 'no')}
-      %span.badge= member['response']
-      %input{type: 'checkbox', value: member['member']['member_id'], checked: ('checked' if member['response'] == 'yes') }
-      = member['member']['name']
+.col-md-6
+  .panel.panel-info
+    .panel-heading
+      %h3.panel-title Attendees
+    .panel-body
+      %ul.list-group
+        - event.attending.each do |member|
+          %li.list-group-item
+            %input{type: 'checkbox', value: member['member']['member_id'], checked: 'checked' }
+            = member['member']['name']
+
+.col-md-6
+  .panel.panel-success
+    .panel-heading
+      %h3.panel-title Raffle
+    .panel-body
+      %form.form-inline
+        .form-group
+          %label.sr-only{for: 'raffle-number'} Number
+          %input#raffle-number.form-control{type: 'number', value: '1'}
+        %button#raffle.btn.btn-default{type: 'submit'} Raffle
+      #raffle-results
