@@ -1,11 +1,9 @@
-require 'ruby_meetup'
 require 'json'
 
 class Group
   attr_reader :group
 
   def initialize(name_or_id)
-    RubyMeetup::ApiKeyClient.key = ENV['MEETUP_API_KEY']
     @client = RubyMeetup::ApiKeyClient.new
     @group = get_group(name_or_id)['results'].first
   end

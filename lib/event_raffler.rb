@@ -3,7 +3,6 @@ require 'json'
 
 class EventRaffler
   def initialize(event_id)
-    RubyMeetup::ApiKeyClient.key = ENV['MEETUP_API_KEY']
     @client = RubyMeetup::ApiKeyClient.new
     @event_id = event_id
   end
