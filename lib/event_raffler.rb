@@ -16,7 +16,7 @@ class EventRaffler
   end
 
   def raffle(n, reject = [])
-    pot(reject).sample(n)
+    pot(reject).sample(n.to_i)
   end
 
   private
@@ -25,6 +25,7 @@ class EventRaffler
   end
 
   def pot(reject)
+    reject = reject.to_a.map(&:to_i)
     attending.reject{ |m| reject.include? m['member']['member_id'] }
   end
 end
