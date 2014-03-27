@@ -1,3 +1,6 @@
+# Environment stuff
+.env
+
 # OS stuff
 *.swp
 *~

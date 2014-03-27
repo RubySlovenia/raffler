@@ -4,6 +4,7 @@ ruby '2.1.1'
 
 gem 'rake'
 gem 'sinatra'
+gem 'dotenv'
 
 group :test, :development do
   gem 'pry'
