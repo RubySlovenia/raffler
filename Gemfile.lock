@@ -57,6 +57,7 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.3)
       ffi (>= 0.5.0)
+    ruby_meetup2 (0.5.0)
     sinatra (1.4.4)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -77,4 +78,5 @@ DEPENDENCIES
   minitest-reporters
   pry
   rake
+  ruby_meetup2
   sinatra

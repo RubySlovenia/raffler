@@ -1,6 +1,5 @@
 require 'bundler/setup'
 require 'rake/testtask'
-require 'dotenv'
 
 Rake::TestTask.new do |t|
   t.libs << 'spec'

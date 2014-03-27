@@ -5,6 +5,7 @@ ruby '2.1.1'
 gem 'rake'
 gem 'sinatra'
 gem 'dotenv'
+gem 'ruby_meetup2'
 
 group :test, :development do
   gem 'pry'
