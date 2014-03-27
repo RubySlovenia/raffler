@@ -4,6 +4,10 @@ require 'event_raffler'
 describe EventRaffler do
   let(:er) { EventRaffler.new(169771922) }
 
+  it 'has its own id' do
+    er.event_id.must_equal 169771922
+  end
+
   it 'lists RSVPed members of an event' do
     VCR.use_cassette('event-169771922') do
       er.rsvps.must_be_instance_of Array

@@ -21,11 +21,10 @@
       });
     });
 
-    //$("input:checkbox:not(:checked)").map(function () {return $(this).val()})
     $('#raffle').click(function (e) {
       e.preventDefault();
       var reject = $('input:checkbox:not(:checked)').map(function () { return $(this).val(); }).get();
-      $.post('/raffle', { event: 'dhxmdjysfblc', number: $('#raffle-number').val(), reject: reject }, function (data) {
+      $.post('/raffle', { event: event_id, number: $('#raffle-number').val(), reject: reject }, function (data) {
         var raffle = '<hr><row>';
         data.forEach(function (entry) {
           raffle +=
