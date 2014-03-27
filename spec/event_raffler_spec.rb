@@ -22,10 +22,10 @@ describe EventRaffler do
     first.must_be_instance_of Array
     first.count.must_equal 2
 
-    second = er.raffle(14)
+    second = er.raffle(14, first)
     second.count.must_equal 14
 
-    third = er.raffle(1)
+    third = er.raffle(1, first + second)
     third.count.must_equal 0
   end
 end
