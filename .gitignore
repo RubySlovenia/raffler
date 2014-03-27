@@ -1,3 +1,6 @@
+# VCR
+vcr_cassettes/
+
 # Environment stuff
 .env
 

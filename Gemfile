@@ -9,8 +9,13 @@ gem 'ruby_meetup2'
 
 group :test, :development do
   gem 'pry'
-  gem 'turn'
   gem 'better_errors'
   gem 'binding_of_caller'
+end
+
+group :test do
+  gem 'turn'
   gem 'guard-minitest'
+  gem 'webmock'
+  gem 'vcr'
 end
