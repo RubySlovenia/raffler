@@ -27,10 +27,14 @@
       $.post('/raffle', { event: event_id, number: $('#raffle-number').val(), reject: reject }, function (data) {
         var raffle = '<hr><row>';
         data.forEach(function (entry) {
+          var image = ''
+          if (entry.member_photo) {
+            image = entry.member_photo.photo_link
+          }
           raffle +=
             '<div class="col-md-6">' +
             '<div class="thumbnail">' +
-            '<img style="background-image:url(' + entry.member_photo.photo_link + ')" alt="' + entry.member.name + '">' +
+            '<img style="background-image:url(' + image + ')" alt="' + entry.member.name + '">' +
             '<h4 class="text-center">' + entry.member.name + '</h4>' +
             '</div>' +
             '</div>';
