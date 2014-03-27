@@ -3,9 +3,6 @@ require 'event_raffler'
 
 describe EventRaffler do
   let(:er) { EventRaffler.new(169771922) }
-  it 'has valid meetup client' do
-    er.client.must_be_instance_of RubyMeetup::ApiKeyClient
-  end
 
   it 'lists RSVPed members of an event' do
     VCR.use_cassette('event-169771922') do

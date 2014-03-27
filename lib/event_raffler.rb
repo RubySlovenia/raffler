@@ -2,8 +2,6 @@ require 'ruby_meetup'
 require 'json'
 
 class EventRaffler
-  attr_reader :client
-
   def initialize(event_id)
     RubyMeetup::ApiKeyClient.key = ENV['MEETUP_API_KEY']
     @client = RubyMeetup::ApiKeyClient.new
