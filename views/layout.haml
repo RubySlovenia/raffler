@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{content: 'width=device-width, initial-scale=1.0', name: 'viewport'}
+    %title Meetup Raffler
+    %meta{content: 'Meetup Raffler', name: 'description'}
+    %link{href: '//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel: 'stylesheet'}
+  %body
+    .navbar.navbar-default.navbar-static-top
+      .container
+        .navbar-header
+          %a.navbar-brand{href: "/"} Meetup Raffler
+    .container
+      = yield

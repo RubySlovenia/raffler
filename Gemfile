@@ -7,6 +7,10 @@ gem 'sinatra'
 gem 'dotenv'
 gem 'ruby_meetup2'
 
+gem 'haml'
+gem 'unicorn'
+gem 'newrelic_rpm'
+
 group :test, :development do
   gem 'pry'
   gem 'better_errors'

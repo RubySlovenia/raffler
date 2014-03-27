@@ -30,6 +30,9 @@ GEM
     guard-minitest (2.2.0)
       guard (~> 2.0)
       minitest (>= 3.0)
+    haml (4.0.5)
+      tilt
+    kgio (2.9.2)
     listen (2.7.1)
       celluloid (>= 0.15.2)
       celluloid-io (>= 0.15.0)
@@ -38,6 +41,7 @@ GEM
     lumberjack (1.0.5)
     method_source (0.8.2)
     minitest (4.7.5)
+    newrelic_rpm (3.7.3.204)
     nio4r (1.0.0)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -46,6 +50,7 @@ GEM
     rack (1.5.2)
     rack-protection (1.5.2)
       rack
+    raindrops (0.13.0)
     rake (10.2.1)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.3)
@@ -63,6 +68,10 @@ GEM
     turn (0.9.7)
       ansi
       minitest (~> 4)
+    unicorn (4.8.2)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
     vcr (2.9.0)
     webmock (1.17.4)
       addressable (>= 2.2.7)
@@ -76,10 +85,13 @@ DEPENDENCIES
   binding_of_caller
   dotenv
   guard-minitest
+  haml
+  newrelic_rpm
   pry
   rake
   ruby_meetup2
   sinatra
   turn
+  unicorn
   vcr
   webmock
