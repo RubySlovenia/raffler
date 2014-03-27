@@ -9,7 +9,7 @@ gem 'ruby_meetup2'
 
 group :test, :development do
   gem 'pry'
-  gem 'minitest-reporters'
+  gem 'turn'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'guard-minitest'

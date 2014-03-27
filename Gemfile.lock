@@ -7,7 +7,6 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    builder (3.2.2)
     celluloid (0.15.2)
       timers (~> 1.1.0)
     celluloid-io (0.15.0)
@@ -28,7 +27,6 @@ GEM
     guard-minitest (2.2.0)
       guard (~> 2.0)
       minitest (>= 3.0)
-    hashie (2.0.5)
     listen (2.7.1)
       celluloid (>= 0.15.2)
       celluloid-io (>= 0.15.0)
@@ -36,16 +34,8 @@ GEM
       rb-inotify (>= 0.9)
     lumberjack (1.0.5)
     method_source (0.8.2)
-    minitest (5.3.1)
-    minitest-reporters (1.0.2)
-      ansi
-      builder
-      minitest (>= 5.0)
-      powerbar
+    minitest (4.7.5)
     nio4r (1.0.0)
-    powerbar (1.0.11)
-      ansi (~> 1.4.0)
-      hashie (>= 1.1.0)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -66,6 +56,9 @@ GEM
     thor (0.19.1)
     tilt (1.4.1)
     timers (1.1.0)
+    turn (0.9.7)
+      ansi
+      minitest (~> 4)
 
 PLATFORMS
   ruby
@@ -75,8 +68,8 @@ DEPENDENCIES
   binding_of_caller
   dotenv
   guard-minitest
-  minitest-reporters
   pry
   rake
   ruby_meetup2
   sinatra
+  turn

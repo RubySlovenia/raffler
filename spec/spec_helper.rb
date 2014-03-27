@@ -1,8 +1,6 @@
 require 'pry'
 require 'minitest/autorun'
-
-require 'minitest/reporters'
-Minitest::Reporters.use!
+require 'turn/autorun'
 
 require 'dotenv'
 Dotenv.load
