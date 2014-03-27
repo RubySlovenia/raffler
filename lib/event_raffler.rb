@@ -15,11 +15,14 @@ class EventRaffler
   end
 
   def attending
-    rsvps.reject{ |r| r['response'] != 'yes'  }
+    rsvps.reject{ |m| m['response'] == 'no'  }
   end
 
   def raffle(n)
-    attending.sample(n)
+    @pot ||= attending
+    s = @pot.sample(n)
+    @pot = @pot.reject{ |m| s.include? m }
+    s
   end
 
   private
