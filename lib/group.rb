@@ -9,7 +9,7 @@ class Group
   end
 
   def events
-    @events ||= get_events['results']
+    @events ||= get_events['results'].sort_by{ |e| e['time'] }.reverse
   end
 
   private
@@ -22,6 +22,6 @@ class Group
   end
 
   def get_events
-    JSON.parse(@client.get_path('/2/events', { group_id: @group['id'] }))
+    JSON.parse(@client.get_path('/2/events', { group_id: @group['id'], status: 'upcoming,past' }))
   end
 end

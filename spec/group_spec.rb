@@ -19,7 +19,8 @@ describe Group do
   it 'has upcoming events' do
     VCR.use_cassette('group-by-name-events') do
       g.events.must_be_instance_of Array
-      g.events.count.must_equal 1
+      g.events.count.must_equal 4
+      g.events.first['name'].must_equal 'Monthly Meetup'
     end
   end
 end
