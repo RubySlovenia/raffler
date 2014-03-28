@@ -23,4 +23,13 @@ describe Group do
       g.events.first['name'].must_equal 'Monthly Meetup'
     end
   end
+
+  it 'fails gracefully when group doesnt exist' do
+    VCR.use_cassette('group-nonexisting') do
+      g = Group.new('aaa')
+      g.group['name'].must_equal nil
+      g.events.must_be_instance_of Array
+      g.events.count.must_equal 0
+    end
+  end
 end
