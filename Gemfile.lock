@@ -9,15 +9,20 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    byebug (2.7.0)
+      columnize (~> 0.3)
+      debugger-linecache (~> 1.2)
     celluloid (0.15.2)
       timers (~> 1.1.0)
     celluloid-io (0.15.0)
       celluloid (>= 0.15.0)
       nio4r (>= 0.5.0)
     coderay (1.1.0)
+    columnize (0.3.6)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
     debug_inspector (0.0.2)
+    debugger-linecache (1.2.0)
     dotenv (0.10.0)
     erubis (2.7.0)
     ffi (1.9.3)
@@ -49,13 +54,16 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
+    pry-byebug (1.3.2)
+      byebug (~> 2.7)
+      pry (~> 0.9.12)
     rack (1.5.2)
     rack-protection (1.5.2)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
     raindrops (0.13.0)
-    rake (10.2.1)
+    rake (10.2.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.3)
       ffi (>= 0.5.0)
@@ -99,6 +107,7 @@ DEPENDENCIES
   haml
   newrelic_rpm
   pry
+  pry-byebug
   rake
   ruby_meetup2
   sinatra
