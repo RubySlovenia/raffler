@@ -14,7 +14,7 @@ class EventRaffler
   end
 
   def attending
-    rsvps.select{ |m| m['response'] == 'yes' }
+    rsvps.select{ |m| m['response'] == 'yes' }.sort_by{ |m| m['mtime'] }
   end
 
   def raffle(n, reject = [])

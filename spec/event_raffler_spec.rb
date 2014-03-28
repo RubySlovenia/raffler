@@ -19,6 +19,7 @@ describe EventRaffler do
     VCR.use_cassette('event-169771922') do
       er.attending.must_be_instance_of Array
       er.attending.count.must_equal 16
+      er.attending.first['member']['name'].must_equal 'Miha Rekar'
     end
   end
 
