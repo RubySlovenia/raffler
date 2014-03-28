@@ -23,6 +23,7 @@
 
     $('#raffle').click(function (e) {
       e.preventDefault();
+      $('#raffle-results').html('<hr>');
       var reject = $('input:checkbox:not(:checked)').map(function () { return $(this).val(); }).get();
       $.post('/raffle', { event: event_id, number: $('#raffle-number').val(), reject: reject }, function (data) {
         var raffle = '<hr><row>';
@@ -43,5 +44,11 @@
         $('#raffle-results').html(raffle);
       });
     });
+  });
+
+  $(document).ajaxStart(function () {
+    $('#spinner').fadeIn();
+  }).ajaxStop(function () {
+    $('#spinner').hide();
   });
 }(jQuery));
