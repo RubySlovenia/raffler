@@ -6,8 +6,9 @@
       %ul.list-group
         - event.attending.each do |member|
           %li.list-group-item
-            %input{type: 'checkbox', value: member['member']['member_id'], checked: 'checked' }
-            = member['member']['name']
+            %label
+              %input{type: 'checkbox', value: member['member']['member_id'], checked: 'checked' }
+              = member['member']['name']
 
 .col-md-6
   .panel.panel-success
